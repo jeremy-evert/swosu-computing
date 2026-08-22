@@ -11,17 +11,32 @@
 <body>
   <header class="hero py-5">
     <div class="container py-4">
-      <p class="eyebrow mb-2">SWOSU COMPUTING</p>
-      <h1 class="display-3 fw-bold">Start here.</h1>
-      <p class="lead col-lg-8">One front door for office hours, setup, course resources, slides, examples, Canvas, Discord, and help.</p>
-      <div class="d-flex flex-wrap gap-2 mt-4">
-        <a class="btn btn-light btn-lg" href="bootstrap/">Bootstrap / Start Here</a>
-        <a class="btn btn-outline-light btn-lg" href="office-hours/">Office Hours</a>
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <p class="eyebrow mb-2">SWOSU COMPUTING</p>
+          <h1 class="display-3 fw-bold">Start here.</h1>
+          <p class="lead">One public front door for setup, office hours, course resources, slides, examples, Canvas, and help.</p>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a class="btn btn-light btn-lg fw-bold" href="bootstrap/">Bootstrap / Start Here</a>
+            <a class="btn btn-outline-light btn-lg" href="office-hours/">Where is Jeremy?</a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center">
+          <a href="bootstrap/" aria-label="Open Start Here"><img class="bootstrap-qr" src="assets/qr/bootstrap.svg" alt="QR code for the Start Here page"></a>
+          <p class="small mt-2 mb-0">On a phone? Scan this and build from nil.</p>
+        </div>
       </div>
     </div>
   </header>
 
   <main class="container py-5">
+    <section class="callout p-4 mb-5">
+      <p class="eyebrow text-dark mb-2">LOST, NEW COMPUTER, OR JUST ARRIVED?</p>
+      <h2 class="h3 fw-bold">Use Start Here as the recovery point.</h2>
+      <p class="mb-3">It gives you the shortest path from “I have a device” to “I can begin working.”</p>
+      <a class="btn btn-primary" href="bootstrap/">Open Start Here</a>
+    </section>
+
     <section class="mb-5">
       <h2 class="h3 mb-3">Courses</h2>
       <div class="row g-3">
@@ -39,6 +54,7 @@
         <a href="office-hours/">Office Hours</a>
         <a href="slides/">Slides</a>
         <a href="examples/">Code Examples</a>
+        <a href="https://swosu.instructure.com/">Canvas</a>
         <a href="mailto:jeremy.evert@swosu.edu">Email Jeremy</a>
         <a href="tel:+17854430967">Call Jeremy</a>
       </div>
@@ -47,12 +63,10 @@
     <section class="callout p-4 p-md-5">
       <p class="eyebrow text-dark mb-2">THE POINT</p>
       <h2 class="h2">We learn. We grow. We belong.</h2>
-      <p class="mb-0">Teamwork, problem solving, and communication are part of the work. This site is here to make the path easier to find.</p>
+      <p class="mb-0">Teamwork, problem solving, and communication are part of the work. This site exists to make the path easier to find.</p>
     </section>
   </main>
 
-  <footer class="container py-4 small text-secondary">
-    Jeremy Evert · Computer Science Faculty · Southwestern Oklahoma State University
-  </footer>
+  <footer class="container py-4 small text-secondary">Jeremy Evert · Computer Science Faculty · Southwestern Oklahoma State University</footer>
 </body>
 </html>
