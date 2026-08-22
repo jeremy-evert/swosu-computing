@@ -186,6 +186,52 @@ body {
   border-radius: 1rem;
 }
 
+.day-timeline {
+  display: grid;
+  gap: .7rem;
+}
+
+.time-block {
+  display: grid;
+  grid-template-columns: minmax(105px, 145px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.1rem;
+  background: white;
+  border: 1px solid var(--line);
+  border-left-width: .45rem;
+  border-radius: .85rem;
+}
+
+.time-block .time {
+  font-weight: 850;
+  color: var(--ink);
+}
+
+.time-block span {
+  color: #53657a;
+}
+
+.time-block.office {
+  border-left-color: #24538a;
+  background: #f7fbff;
+}
+
+.time-block.classblock {
+  border-left-color: #6f42c1;
+  background: #fbf9ff;
+}
+
+.time-block.personal {
+  border-left-color: #d39e00;
+  background: #fffdf5;
+}
+
+.time-block.away {
+  border-left-color: #6c757d;
+  background: #f5f6f7;
+}
+
 @media (max-width: 575.98px) {
   .hero .display-3,
   .subhero .display-4 {
@@ -200,5 +246,14 @@ body {
   .step-number {
     width: 38px;
     height: 38px;
+  }
+
+  .time-block {
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+
+  .time-block .time {
+    font-size: .95rem;
   }
 }
