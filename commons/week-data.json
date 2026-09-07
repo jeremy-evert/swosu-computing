@@ -1,0 +1,21 @@
+{
+  "week1_start_date": "2026-08-17",
+  "weeks": [
+    {"week": 1, "title": "Define the Problem", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 2, "title": "Gather Context", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 3, "title": "Plan the Work", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 4, "title": "Decompose the Task", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 5, "title": "Select the Right Model", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 6, "title": "Engineer the Prompt", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 7, "title": "Research and Retrieve", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 8, "title": "Reason", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 9, "title": "Generate", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 10, "title": "Critique", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 11, "title": "Verify", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 12, "title": "Revise", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 13, "title": "Decide", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 14, "title": "Automate", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 15, "title": "Measure", "url": "https://swosu.instructure.com/courses/24298"},
+    {"week": 16, "title": "Reflect and Improve", "url": "https://swosu.instructure.com/courses/24298"}
+  ]
+}
