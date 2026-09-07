@@ -1,0 +1,21 @@
+{
+  "week1_start_date": "2026-08-17",
+  "weeks": [
+    {"week": 1, "title": "Success Foundations (Aug 17–21)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 2, "title": "Learning Science (Aug 24–28)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 3, "title": "Growth (Aug 31–Sep 4)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 4, "title": "Thinking (Sep 7–11)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 5, "title": "Reasoning (Sep 14–18)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 6, "title": "Evidence (Sep 21–25)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 7, "title": "Design (Sep 28–Oct 2)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 8, "title": "Craftsmanship (Oct 5–9)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 9, "title": "Evolution (Oct 12–16)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 10, "title": "Engineering (Oct 19–23)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 11, "title": "Delivery (Oct 26–30)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 12, "title": "Productivity (Nov 2–6)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 13, "title": "People (Nov 9–13)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 14, "title": "Communication (Nov 16–20)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 15, "title": "Modern AI (Nov 23–27)", "url": "https://swosu.instructure.com/courses/74029"},
+    {"week": 16, "title": "Farkle / Machine Learning fun week (Nov 30–Dec 4)", "url": "https://swosu.instructure.com/courses/74029"}
+  ]
+}

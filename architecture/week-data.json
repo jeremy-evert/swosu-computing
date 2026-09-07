@@ -1,0 +1,21 @@
+{
+  "week1_start_date": "2026-08-17",
+  "weeks": [
+    {"week": 1, "title": "Success Foundations (Aug 17-21)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 2, "title": "AI Laboratory Training (Aug 24-28)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 3, "title": "Containers & Repeatability (Aug 31-Sep 4)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 4, "title": "Linux as a Machine Telescope (Sep 8-11)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 5, "title": "Build the Machine (Sep 14-18)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 6, "title": "Bits Become Instructions (Sep 21-25)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 7, "title": "Crack Open the CPU (Sep 28-Oct 2)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 8, "title": "Make It Fast Without Breaking It (Oct 5-9)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 9, "title": "Follow the Program Down (Oct 12-14)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 10, "title": "Make the Memory Hierarchy Hurt (Oct 19-23)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 11, "title": "The Useful Lie of Memory (Oct 26-30)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 12, "title": "More Cores, More Problems (Nov 2-6)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 13, "title": "Different Machines for Different Work (Nov 9-13)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 14, "title": "Sit in the Architect's Chair (Nov 16-20)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 15, "title": "Thanksgiving Wind-Down (Nov 23-27)", "url": "https://swosu.instructure.com/courses/75249"},
+    {"week": 16, "title": "Farkle + Machine Learning (Nov 30-Dec 4)", "url": "https://swosu.instructure.com/courses/75249"}
+  ]
+}

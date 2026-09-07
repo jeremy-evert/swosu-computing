@@ -1,0 +1,85 @@
+{
+  "week1_start_date": "2026-08-17",
+  "weeks": [
+    {
+      "week": 1,
+      "title": "Reasoning Odyssey launch",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 2,
+      "title": "Building Your AI Lab / Containers and Repeatability",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 3,
+      "title": "running your reasoning in a container",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 4,
+      "title": "Logic, Claims & Proof",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 5,
+      "title": "Sets, Functions & Sequences as Representations",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 6,
+      "title": "Algorithms, Correctness & Growth",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 7,
+      "title": "Integer Properties & Cryptography",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 8,
+      "title": "Induction, Recursion & Recurrences",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 9,
+      "title": "Counting & Combinatorial Reasoning",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 10,
+      "title": "Probability, Uncertainty & Evidence",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 11,
+      "title": "Relations, Equivalence, Partial Orders, Matrices & Digraphs",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 12,
+      "title": "Graphs & Network Reasoning",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 13,
+      "title": "Trees, Search & Decision Structures",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 14,
+      "title": "Boolean Algebra, Circuits, SAT & Finite-State Machines",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 15,
+      "title": "Thanksgiving / Mexico Travel Buffer",
+      "url": "https://swosu.instructure.com/courses/74035"
+    },
+    {
+      "week": 16,
+      "title": "Farkle, Machine Learning, and What the Evidence Lets You Say",
+      "url": "https://swosu.instructure.com/courses/74035"
+    }
+  ]
+}
