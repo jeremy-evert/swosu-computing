@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A student field guide to deciding with AI: rules of thumb, a seven-move routine, prompts to catch AI mistakes, and prompts for getting unstuck.">
+<title>Deciding with AI | SWOSU Computing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a field guide in four "sheets" — one column on phones, four letter pages in print */
+:root{
+  --bg:#fbfaf7; --paper:#ffffff; --ink:#1c2230; --muted:#5b6170; --rule:#d9d6cc;
+  --accent:#1f6b5c; --accent-soft:#e3f0ec; --prompt:#f2f1ec; --warn:#a2461f;
+  --f-display:"Bricolage Grotesque","Inter",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Inter",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono","DejaVu Sans Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14171d; --paper:#1b1f27; --ink:#e8e6df; --muted:#a3a8b3; --rule:#343a46;
+  --accent:#6cc4ae; --accent-soft:#1f3631; --prompt:#232832; --warn:#e48b62; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171d; --paper:#1b1f27; --ink:#e8e6df; --muted:#a3a8b3; --rule:#343a46;
+  --accent:#6cc4ae; --accent-soft:#1f3631; --prompt:#232832; --warn:#e48b62; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 var(--f-body);margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+main{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+.sheet{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:22px 24px;min-width:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:2.1rem;font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.35rem;font-weight:800;margin:18px 0 8px;padding-bottom:4px;border-bottom:2px solid var(--ink)}
+.sheet>h2:first-child{margin-top:0}
+h3{font-size:1rem;font-weight:600;margin:12px 0 4px}
+p{margin:6px 0}
+.sub{color:var(--muted);margin-top:4px}
+.kicker{font:600 .72rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.thesis{background:var(--accent-soft);border-left:4px solid var(--accent);padding:10px 14px;margin:12px 0;font-weight:700}
+.top{display:flex;gap:18px;align-items:flex-start;justify-content:space-between}
+.top>div{min-width:0}
+.qr{flex:none;text-align:center;font-size:.72rem;color:var(--muted);width:112px}
+.qr img{width:104px;height:104px;display:block;margin:0 auto 4px;background:#fff;padding:4px;border-radius:4px}
+.web-only .qr{display:none}
+ol,ul{margin:6px 0;padding-left:1.4em}
+li{margin:3px 0}
+.rules{columns:2;column-gap:24px;padding-left:1.4em}
+.rules li{break-inside:avoid}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border:1px solid var(--rule);padding:5px 8px;text-align:left;vertical-align:top}
+th{background:var(--prompt);font-weight:700}
+.move{display:grid;grid-template-columns:34px 1fr;gap:4px 10px;margin:10px 0}
+.move .n{font:800 1.3rem/1 var(--f-display);color:var(--accent);padding-top:2px}
+.move>div{min-width:0}
+.move h3{margin:0}
+.prompt{position:relative;margin:6px 0}
+.prompt pre{background:var(--prompt);border:1px solid var(--rule);border-radius:6px;margin:0;padding:8px 10px;
+  font:.8rem/1.45 var(--f-mono);white-space:pre-wrap;word-break:break-word}
+.prompt .lbl{font:600 .68rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.copy{position:absolute;top:18px;right:6px;font:600 .72rem var(--f-body);border:1px solid var(--rule);background:var(--paper);
+  color:var(--ink);border-radius:5px;padding:3px 8px;cursor:pointer}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{font-size:.88rem;color:var(--muted)}
+.box{border:1.5px solid var(--ink);border-radius:8px;padding:10px 14px;margin:10px 0}
+.ladder{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0;padding:0;list-style:none;font-size:.85rem}
+.ladder li{border:1px solid var(--rule);border-radius:999px;padding:2px 10px;margin:0}
+.ladder li b{color:var(--accent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+.two>div{min-width:0}
+code{font:.85em var(--f-mono)}
+.sitebar{max-width:760px;margin:0 auto 14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-weight:700}
+.sitebar a{color:var(--accent)}
+.foot{font-size:.7rem;color:var(--muted);text-align:right;margin-top:8px}
+@media (max-width:560px){.rules{columns:1}.two{grid-template-columns:1fr}h1{font-size:1.7rem}}
+
+@media print{
+  @page{size:letter;margin:.42in .5in .4in}
+  :root{--bg:#fff;--paper:#fff;--ink:#111;--muted:#444;--rule:#bbb;--accent:#1f6b5c;--accent-soft:#e6f1ed;--prompt:#f1f1ee}
+  body{font-size:10.3pt;line-height:1.36;padding:0}
+  main{max-width:none;gap:0;display:block}
+  .sheet{border:0;border-radius:0;padding:0;break-after:page;page-break-after:always}
+  .sheet:last-child{break-after:auto}
+  h1{font-size:21pt} h2{font-size:12.5pt;margin:9px 0 4px} h3{font-size:10pt;margin:6px 0 2px}
+  p{margin:3px 0} li{margin:1px 0} ol,ul{margin:3px 0}
+  .thesis{margin:7px 0;padding:6px 10px}
+  table{font-size:9.2pt} th,td{padding:3px 6px}
+  .prompt{margin:3px 0} .prompt pre{font-size:8.5pt;line-height:1.38;padding:5px 8px}
+  .copy,.web-hint{display:none}
+  .move{margin:5px 0;grid-template-columns:24px 1fr} .move .n{font-size:13pt}
+  .box{padding:6px 10px;margin:6px 0}
+  .note{font-size:8.6pt}
+  .web-only .qr{display:block}
+}
+</style>
+
+<nav class="web-hint sitebar"><a href="../">&larr; SWOSU Computing</a><a href="Deciding_with_AI.pdf">Printable PDF (4 pages)</a></nav>
+</head>
+<body>
+<main class="web-only">
+
+<!-- ============ SHEET 1 ============ -->
+<section class="sheet">
+  <div class="top">
+    <div>
+      <div class="kicker">Computing Commons · AI Fluency 13: Decide</div>
+      <h1>Deciding with AI</h1>
+      <p class="sub">A field guide for getting your digital assistant to actually assist: to think, to choose, and to get unstuck.</p>
+    </div>
+    <div class="qr"><img alt="QR code linking to the phone version of this guide" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYYAAAGGAQAAAABX+xtIAAADfklEQVR4Xu1cW2rrQAzVNIZ+OjvoUtwd3DV1Z/FSsoALyWchRhc9PaY/FgGj2+hQQhM72OMzj6MjTRpCDMtb7HwAqG/sxxHPCvBiN4SX8UFvT9QN9AXxRv+NDztpfBxxV3WN/Yg/K2IaCQ/gFwB6y8RPiMK+dAbGpTiPIM7HEd+Q0c0jmcc0g5uFeNscpfmgOI/hCAafu8Z8XhrAvTWdzEdEmK5DN/3X6hzDc3zsw7PXOGH7pCtN13ca7Etrn/6Z4dlr7EFdYz/iz2owvbbQBH8DBPqDO0CbLieE+XwCnP9QP1CFH79GfWM/DnpW90Yg8mFpMsHPH98Nv3iqH78b3zGfRLPAQXcVRN1VAKLaRJSLcuslO8t4VvCGitUCyNkTNVZz8S4k+4vI+OnG7ZSoLWc76q4CkPicXiQ05wiNI/WJYnZxbCRm50W9OA8gZ09U942Yhsnjc7Zj6K20j8e5Hi3OA0jNuZpxvHa7z2pmXOfO1DgPISvnYrfZFC7DmbxXm+V1vtfOUOt5BFk5l6SKr+frAq4Knld29eBpoc/ZjrqrACybxspNrXbT6KbgNdsi4q6e7n7kfFai0S0+9xGvGl2GuFp1klwrzgPIy7nkSHv2PVbrUuck3ovzGDJzLiNZ5Zv6NGu4vsmp1zgPIC/n6r+sGVTPlbs7445NcR5BWs7ZcNlarGLGec2E+O1yXo3zAPJyrhVvZrqbeBcfbn2r5VM521F3FYDGama6dyWRkl7pdDt/UpwHkLMnugXn9XA6hXcHLK9Wuj2KrJxzfK5mHFvtP0pedbDT0VrPQ8jJ+RvMTWvfdDgTtfPZS17Zp6G6SKqGpANZ2xHF67bDc6m9XrPUqs386rfX3B5Fzn5lLrtM3CbaJGHu8o0VvBZIlYYLIDPnm/z5mmjxXS6m62o9jyEr55o81UoJ3cwiSXSCl0VxjqXq4ULIynlf98qmOzNtWl48eC+ZK90eQk7OSbcrpDXzB63svI/FNrJJ4TuBxn7WdkTxuu0YePcKsTrAhEwtB2e8nWEZcD7/HdACNt7i8rrP6re0vN+Xuu5ANm99s57L8l66PYCcvWSzF9nSZ1ruLj88sKl1Lg0Xwn/AuYThLM9tE4OqOUutVo4lhLycS75Mt6p1m1l855r2g/Lbo0jLuTVEdyfZnhX9uDPo5Pcocraj7mo/Wv1u1G78ln71D9ScPKNkF1GUAAAAAElFTkSuQmCC"><b>Scan me.</b> Every prompt in this guide, with copy buttons.</div>
+  </div>
+  <p class="thesis">You supply the values. The AI supplies options, tradeoffs, and objections. You own the decision.</p>
+  <p>Ask an AI "which is best?" and you get a confident answer with no criteria: best for whom, at what cost? That is the whole decision, and the AI just made it for you by guessing. A good prompt hands over the facts and keeps the values.</p>
+  <div class="tbl"><table>
+    <tr><th style="width:18%"></th><th>Weak prompt</th><th>Strong prompt</th></tr>
+    <tr><td><b>You type</b></td><td>Should I use inheritance or composition?</td><td>I'm a Python beginner on a 3-person team with one week. Compare inheritance and composition on build time, ease of understanding, and adding room types later. Don't recommend one. Flag one claim I should verify.</td></tr>
+    <tr><td><b>You get</b></td><td>A verdict that sounds sure</td><td>A comparison you can argue with</td></tr>
+    <tr><td><b>Who decided</b></td><td>The AI, by accident</td><td>You, on purpose</td></tr>
+  </table></div>
+
+  <h2>Rules of thumb</h2>
+  <p class="note">When you forget everything else, remember these.</p>
+  <ol class="rules">
+    <li><b>Cheap and reversible? Decide fast.</b> Save the checking for choices that cost a lot to get wrong.</li>
+    <li><b>Commit before you ask.</b> Write your guess first, or the AI's first answer becomes yours.</li>
+    <li><b>Trust scales with how easy a mistake is to catch.</b> Brainstorming names: loose. A dose or a deadline: never on its word alone.</li>
+    <li><b>Specific is checkable, and specific is where inventions hide.</b> Check names, numbers, quotes, links, and function names first.</li>
+    <li><b>Disagreement is information. Agreement is a clue,</b> not proof.</li>
+    <li><b>The first answer is a draft.</b> The second round is where it gets good.</li>
+    <li><b>If it flatters you, get suspicious.</b> If it caves without new evidence, discount what it said.</li>
+    <li><b>Longer is not better.</b> Ask for the simplest version that works.</li>
+    <li><b>Check the one thing that would hurt most if it were wrong.</b> You can't check everything, so choose.</li>
+    <li><b>Vague in, vague out.</b> Goal, context, limits, format.</li>
+    <li><b>A chat that's going in circles won't fix itself.</b> Restart with a summary.</li>
+    <li><b>Private stays private.</b> When unsure, leave it out.</li>
+    <li><b>If your name is on it, you answer for it.</b></li>
+  </ol>
+
+  <h2>What assistants do well, and where they trip</h2>
+  <div class="tbl"><table>
+    <tr><th>Great at</th><th>Watch out for</th></tr>
+    <tr><td>Gathering and summarizing a lot, fast</td><td>Invented facts, sources, and numbers; outdated information</td></tr>
+    <tr><td>Brainstorming options you hadn't thought of</td><td>Options it can't know about, because it doesn't know your situation</td></tr>
+    <tr><td>Explaining an idea at your level</td><td>Smooth, convincing explanations of things that are wrong</td></tr>
+    <tr><td>Comparing options and spotting risks</td><td>Quietly choosing your values for you</td></tr>
+    <tr><td>Breaking a big, scary job into small steps</td><td>Plans so long that they become another thing to avoid</td></tr>
+    <tr><td>Patient, tireless, awake at 2 a.m.</td><td>It doesn't know when it doesn't know</td></tr>
+  </table></div>
+  <p class="foot">1 of 4</p>
+</section>
+
+<!-- ============ SHEET 2 ============ -->
+<section class="sheet">
+  <h2>The routine: seven moves</h2>
+  <p>Run them in order for any choice that matters. A small choice needs only moves 1 and 7. The more a mistake costs, the more of the seven you run. Fill in the <code>[brackets]</code>.</p>
+
+  <div class="move"><div class="n">1</div><div><h3>Size it</h3>
+    <p>How much does a wrong choice cost, and can you undo it? Cheap and reversible: decide now and skip to move 7. Costly or permanent: run every move.</p></div></div>
+
+  <div class="move"><div class="n">2</div><div><h3>Commit first, then brief the AI</h3>
+    <p>On paper, before you open any AI: your top three priorities and your gut guess. Then start the chat with a briefing.</p>
+    <div class="prompt"><div class="lbl">The briefing</div><pre>I need to decide: [the decision, in one sentence].
+What I care about, in order: [1], [2], [3].
+Limits: [deadline, budget, skills, rules].
+My guess: [guess]. I might be wrong.
+Don't recommend anything yet. Ask me up to five questions that would change your analysis, one at a time.</pre></div></div></div>
+
+  <div class="move"><div class="n">3</div><div><h3>Widen</h3>
+    <div class="prompt"><div class="lbl">Widen</div><pre>What options haven't I considered, including doing nothing and a cheaper version of each? Is this secretly two decisions?</pre></div></div></div>
+
+  <div class="move"><div class="n">4</div><div><h3>Compare on your criteria</h3>
+    <div class="prompt"><div class="lbl">Compare</div><pre>Compare [A], [B], and [C] on [my criteria]. Rate each 1 to 3 with a one-sentence reason. List your assumptions and one claim I should verify. Don't recommend one, and don't decide which criterion matters most.</pre></div></div></div>
+
+  <div class="move"><div class="n">5</div><div><h3>Attack your favorite</h3>
+    <div class="prompt"><div class="lbl">Argue against me</div><pre>I'm leaning toward [choice] because [reason]. Make the strongest case against it. What evidence would change your mind?</pre></div>
+    <div class="prompt"><div class="lbl">Premortem</div><pre>It's [three months] from now and this decision failed. Give three likely reasons, and an early warning sign for each.</pre></div></div></div>
+
+  <div class="move"><div class="n">6</div><div><h3>Cross-check</h3>
+    <p>Take the claims that matter to a second AI (page 3), then to something outside every chat: a source, a test you run, or a person.</p></div></div>
+
+  <div class="move"><div class="n">7</div><div><h3>Decide and log</h3>
+    <p>Write three lines: <b>I chose ___. I gave up ___. I'd change my mind if ___.</b> A decision you can't explain next month was a coin flip.</p></div></div>
+
+  <h2>Two prompts for any chat</h2>
+  <div class="prompt"><div class="lbl">Assistant mode (paste first)</div><pre>Act as my decision assistant. Keep me honest; don't just make me feel good. Ask one question at a time. Point out anything I'm assuming without evidence. When I state a preference, tell me what it costs me. Never choose for me.</pre></div>
+  <div class="prompt"><div class="lbl">Clean restart (when a chat wanders or repeats a mistake)</div><pre>Summarize this conversation in ten lines: the goal, my criteria, the options, what we verified, and what's still open. I'll paste it into a fresh chat.</pre></div>
+  <p class="note">A role like "decision assistant" sets the tone. It doesn't make the answers more true, so you still check them.</p>
+  <p class="foot">2 of 4</p>
+</section>
+
+<!-- ============ SHEET 3 ============ -->
+<section class="sheet">
+  <h2>Catch the AI in a lie</h2>
+  <p>An AI doesn't lie on purpose. It predicts fluent text, and sometimes fluent text is invented: a study that doesn't exist, a function nobody wrote. Think of a brilliant improv actor who never says "I don't know." Confidence tells you nothing, so get a second opinion: open a fresh chat, ideally in a <b>different</b> AI, and paste the first answer under one of these.</p>
+  <div class="two">
+    <div>
+      <div class="prompt"><div class="lbl">1 · Did it lie?</div><pre>Which statements in this answer are false, outdated, or unsupported? For each, what's true and how could I confirm it? If you're unsure, say so.</pre></div>
+      <div class="prompt"><div class="lbl">2 · Did it make anything up?</div><pre>Which names, sources, quotes, numbers, links, or technical terms here might not exist? How do I look each one up?</pre></div>
+      <div class="prompt"><div class="lbl">3 · Did it leave anything out?</div><pre>What options, risks, or viewpoints are missing? Who is affected but never mentioned?</pre></div>
+    </div>
+    <div>
+      <div class="prompt"><div class="lbl">4 · Did it go overboard?</div><pre>Where is this overconfident, too long, or too complicated? What's the simplest version that still works?</pre></div>
+      <div class="prompt"><div class="lbl">5 · What would make it better?</div><pre>I'm [one line about me and my goal]. What three changes would make this more useful to me? Write the follow-up question I should send the first AI.</pre></div>
+      <div class="prompt"><div class="lbl">6 · What would change its mind?</div><pre>What evidence would change this conclusion? What's the strongest argument against it?</pre></div>
+    </div>
+  </div>
+  <div class="prompt"><div class="lbl">All six at once (short on time)</div><pre>Review the answer below like a skeptical colleague. In a short section each: (1) anything false? (2) made up? (3) left out? (4) overboard? (5) what would make it better? (6) what would change your mind? Be blunt.
+[paste the answer]</pre></div>
+  <p><b>Then don't stop there.</b> The second AI can be wrong too. Treat its flags as a to-do list, not a verdict. Check each one, and take the real ones back to the first AI: "Another assistant says X is wrong. Show your evidence."</p>
+
+  <h3>How much to trust it: the evidence ladder</h3>
+  <p class="note">Climb as high as the stakes demand.</p>
+  <ul class="ladder"><li><b>1</b> One AI says it</li><li><b>2</b> Two AIs agree</li><li><b>3</b> A source you opened says it</li><li><b>4</b> You ran or tested it</li><li><b>5</b> A qualified person confirms it</li></ul>
+
+  <h3>Worked example</h3>
+  <p>AI #1 says: <i>"To get the date three days from now, use <code>datetime.today().add_days(3)</code>."</i> AI #2 flags it: Python's <code>datetime</code> has no <code>add_days</code>; the usual way is <code>+ timedelta(days=3)</code>. Settle it by running both, not by voting. One works and one raises <code>AttributeError</code>. That is rung 4, and it took thirty seconds.</p>
+
+  <h2>You already know how to do this</h2>
+  <div class="tbl"><table>
+    <tr><th>In real life</th><th>What you already know</th><th>With an AI</th></tr>
+    <tr><td>GPS</td><td>Usually right, until it routes you down a closed road. You're still the driver.</td><td>Follow it on easy turns. Look up when the stakes are high.</td></tr>
+    <tr><td>Asking a stranger for directions</td><td>People answer confidently even when guessing.</td><td>Ask a second person: a second AI.</td></tr>
+    <tr><td>The friend who loves every idea</td><td>"Great plan!" feels good and tells you nothing.</td><td>Ask for the case against. Push back and see if it folds.</td></tr>
+    <tr><td>The group-project teammate</td><td>"Yeah, I did my part." Then you open the file.</td><td>Run it yourself. "All tests pass" is a claim.</td></tr>
+    <tr><td>Gossip</td><td>Five people repeating a rumor is still one rumor.</td><td>Two AIs agreeing is a clue. Find the original source.</td></tr>
+    <tr><td>Saving before the boss fight</td><td>You don't try the hard level without a save point.</td><td>Commit with git before each AI change.</td></tr>
+  </table></div>
+  <p class="foot">3 of 4</p>
+</section>
+
+<!-- ============ SHEET 4 ============ -->
+<section class="sheet">
+  <h2>Get unstuck: the garage shelf</h2>
+  <p>Some decisions aren't hard. They're <i>heavy</i>. It's the shelf in the garage you've stared at for six weeks, the email you keep not sending, the project you can't start. It isn't complicated; it's living rent-free in your head. An assistant is great at shrinking it down to something you can do before lunch.</p>
+  <div class="two">
+    <div>
+      <div class="prompt"><div class="lbl">Empty your head</div><pre>I'm going to dump everything about [the thing] that's bugging me, messy and in no order. Sort it into: do now, decide later, and let go. Then tell me the one thing that matters most.</pre></div>
+      <div class="prompt"><div class="lbl">Shrink it</div><pre>I've been avoiding [task]. What's the smallest first step that takes under 15 minutes and needs no decisions? Then the next one.</pre></div>
+    </div>
+    <div>
+      <div class="prompt"><div class="lbl">Define "good enough"</div><pre>What does "done enough" look like for [task]? Give me a checklist of no more than five items, so I know when to stop.</pre></div>
+      <div class="prompt"><div class="lbl">Keep me company</div><pre>I'm doing [task] right now. Give me one step at a time. When I type "done," give me the next step and nothing else.</pre></div>
+    </div>
+  </div>
+  <p class="note">This is a tool for getting moving, not a substitute for people. If the worry is about more than a task, or it won't let go, talk to someone: a friend, an advisor, or campus counseling.</p>
+
+  <h2>Rules for building things with AI</h2>
+  <p class="note">They hold for code, lab reports, and business plans alike. The loop: define, plan, slice, build, test, review, save.</p>
+  <ol class="rules">
+    <li><b>Define "done" first.</b> Three example inputs and the outputs you expect, or a checklist.</li>
+    <li><b>Plan, then build.</b> "Make a plan and show me before changing anything."</li>
+    <li><b>Slice small.</b> One piece at a time: build it, test it, move on.</li>
+    <li><b>Never ship what you can't explain.</b> If you can't change it without the AI, you don't own it yet.</li>
+    <li><b>Run it yourself.</b> Try odd inputs: empty, huge, unexpected.</li>
+    <li><b>Check every name it gives you.</b> Invented libraries and functions are a real hazard.</li>
+    <li><b>Keep save points.</b> Commit with git before each AI change.</li>
+    <li><b>Say how you used it.</b> Which tool, for what, and how you checked.</li>
+  </ol>
+
+  <h2>When AI should not decide</h2>
+  <div class="tbl"><table>
+    <tr><th>Situation</th><th>Use AI for</th><th>Then</th></tr>
+    <tr><td>Medical, legal, financial, or safety</td><td>Preparing better questions; explaining terms</td><td>Take the questions to a qualified person.</td></tr>
+    <tr><td>Private data (yours or anyone's)</td><td>Nothing, or a fully anonymized version</td><td>When unsure, leave it out.</td></tr>
+    <tr><td>Graded work</td><td>Only what your syllabus allows</td><td>Say what you used it for and how you checked.</td></tr>
+    <tr><td>Decisions about people</td><td>Organizing criteria; spotting gaps</td><td>A human decides and answers for it.</td></tr>
+  </table></div>
+
+  <div class="box">
+    <h3 style="margin-top:0">Your turn: try it in the playground</h3>
+    <p>Pick one, open two AI tools (or two fresh chats), and run the seven moves.</p>
+    <ol>
+      <li><b>The class problem.</b> Three beginners have one week to build a room-reservation program. Inheritance, composition in one file, or composition across modules? Hint: ask whether those are really three options.</li>
+      <li><b>A real choice of yours.</b> A class schedule, a laptop, a project idea. Leave out anything private.</li>
+      <li><b>Your garage shelf.</b> The thing you've been putting off. Run the four unstuck prompts and do the first step today.</li>
+    </ol>
+    <p><b>Before you act on any answer, ask:</b> What would I check? Who's left out? What would make me stop?</p>
+  </div>
+  <p class="foot">4 of 4</p>
+</section>
+</main>
+
+<script>
+document.querySelectorAll('.prompt').forEach(function(box){
+  var pre=box.querySelector('pre'); if(!pre) return;
+  var b=document.createElement('button'); b.className='copy'; b.type='button'; b.textContent='Copy';
+  b.addEventListener('click',function(){
+    var t=pre.innerText;
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';};
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+  });
+  box.appendChild(b);
+});
+</script>
+
+</body>
+</html>
