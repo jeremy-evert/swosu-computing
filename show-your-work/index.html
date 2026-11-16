@@ -63,6 +63,13 @@ th{background:var(--chip)}
 .proj svg{width:40px;height:40px;color:var(--accent)}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
 .chip{background:var(--chip);border:1px solid var(--rule);border-radius:999px;padding:2px 10px;font-size:.8rem}
+.prompt{margin:10px 0}
+.prompt .lbl{font:700 .72rem/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.prompt pre{background:var(--chip);border:1px solid var(--rule);border-radius:8px;margin:0;padding:10px 12px;font:.82rem/1.5 ui-monospace,monospace;white-space:pre-wrap;word-break:break-word}
+.prompt button{margin-top:6px}
+.log{list-style:none;margin:0;padding:0}
+.log li{border-left:4px solid var(--accent);padding:6px 0 6px 12px;margin:10px 0}
+.log b{display:block}
 .note{color:var(--muted);font-size:.9rem}
 footer{color:var(--muted);font-size:.85rem}
 @media print{.bar button,.qr{display:none}.card{break-inside:avoid}}
@@ -93,6 +100,9 @@ footer{color:var(--muted);font-size:.85rem}
     <li><a href="#checklist">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="6" width="30" height="36" rx="4"/><path d="M16 17l3 3 5-6M16 30l3 3 5-6M29 18h5M29 31h5"/></svg>
       <span><h3>The checklist</h3><small>Tick it off before you publish</small></span></a></li>
+    <li><a href="#review-with-ai">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="12"/><path d="M30 30l11 11M16 21l4 4 7-8"/></svg>
+      <span><h3>Review with AI</h3><small>Prompts that check your work</small></span></a></li>
     <li><a href="#projects">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="15" height="15" rx="3"/><rect x="27" y="6" width="15" height="15" rx="3"/><rect x="6" y="27" width="15" height="15" rx="3"/><rect x="27" y="27" width="15" height="15" rx="3"/></svg>
       <span><h3>Real projects</h3><small>Examples that followed it</small></span></a></li>
@@ -187,6 +197,42 @@ footer{color:var(--muted);font-size:.85rem}
   <p class="note">The same list as a plain file: <a href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/CHECKLIST.md">CHECKLIST.md</a>.</p>
 </section>
 
+<section id="review-with-ai" class="card" aria-label="Review with AI">
+  <h2>Let an AI review it. Then you check.</h2>
+  <p>An AI is a good skeptical reader and a poor judge. It can find what you missed, and it can invent problems or miss real ones. Treat every flag as a to-do item that you verify yourself. These prompts come from the <a href="../deciding-with-ai/">Deciding with AI field guide</a> (<a href="../deciding-with-ai/Deciding_with_AI.pdf">PDF</a>), adapted for publishing.</p>
+  <p class="thesis"><b>Never paste a password, key, token, or someone's private information into an AI chat.</b> Search for those on your own computer. Give the AI only text you would be fine seeing public.</p>
+  <h3>Prompts</h3>
+<div class="prompt"><div class="lbl">1 · Read it as a stranger</div><pre>Here is my README. Read it as someone who has never seen this project. In three sentences say what it is, who it is for, and how to try it. Then list everything you could not tell.
+
+[paste README]</pre><button type="button" class="copy">Copy</button></div>
+<div class="prompt"><div class="lbl">2 · Hunt for things that should not be public</div><pre>Here is the list of files I plan to publish and the text of my README. Which items might be private, risky, or not mine to share: names, emails, phone numbers, folder paths, computer names, locations, other people's work? For each, say why. Tell me what you could not check. I will verify every item myself.
+
+[paste file list and README, with any secrets already removed]</pre><button type="button" class="copy">Copy</button></div>
+<div class="prompt"><div class="lbl">3 · Catch the overclaims</div><pre>Which claims in this README are not backed by something I did or checked? Which words (secure, private, accurate, safe, approved, tested) need evidence? For each, tell me what evidence would justify keeping it.
+
+[paste README]</pre><button type="button" class="copy">Copy</button></div>
+<div class="prompt"><div class="lbl">4 · Credit and license check</div><pre>List every kind of material this project might contain that I did not make: code, fonts, images, sounds, text, worksheets, data. For each kind, tell me where to look to confirm its license. Do not tell me what the license is; I will read it myself.
+
+[describe the project in a few lines]</pre><button type="button" class="copy">Copy</button></div>
+<div class="prompt"><div class="lbl">5 · Premortem</div><pre>It is three months from now and publishing this went badly. Give three likely reasons and an early warning sign for each. Then tell me what I could check today to prevent each one.
+
+[describe the project and what you plan to publish]</pre><button type="button" class="copy">Copy</button></div>
+  <h3>Then check, from weakest to strongest</h3>
+  <ol class="rules">
+    <li>One AI says it.</li>
+    <li>A second AI, in a fresh chat, agrees.</li>
+    <li>You opened a source and read it.</li>
+    <li>You ran or tested it yourself.</li>
+    <li>A qualified person confirmed it.</li>
+  </ol>
+  <p>Climb as high as the stakes demand. A typo in a README can sit at rung 1. A license or someone's private information should reach rung 3 or higher.</p>
+  <h3>Write down what you decided</h3>
+<div class="prompt"><div class="lbl">Three-line decision log (write it yourself, no AI)</div><pre>I chose ___.
+I gave up ___.
+I would change my mind if ___.</pre><button type="button" class="copy">Copy</button></div>
+  <p class="note">Put your answers in your project's notes. A decision you cannot explain next month was a coin flip.</p>
+</section>
+
 <section id="projects" aria-label="Real projects">
   <h2>Real projects that followed it</h2>
   <div class="proj">
@@ -222,6 +268,15 @@ footer{color:var(--muted);font-size:.85rem}
     <li><b>Review before it goes public,</b> with this page's checklist.</li>
     <li><b>Publish, then test the live version</b> the way a stranger would.</li>
   </ol>
+  <h3>A real decision log from this page</h3>
+  <p>This is what the three-line log looks like. These are decisions made while building this page and its example.</p>
+  <ul class="log">
+    <li><b>Keep BSD 2-Clause on the game.</b>Gave up a tidier choice. Would change if we learn the game's source material is not ours to relicense.</li>
+    <li><b>Publish only the one example repository.</b>Gave up showing the full private workspace. Would change if every private file passes the same checklist.</li>
+    <li><b>Merge through a reviewed pull request, not a direct push.</b>Gave up speed. An automated tool was stopped from merging on its own, and a person did it. That is the system working.</li>
+    <li><b>Link to the existing field guide instead of copying it.</b>Gave up a self-contained page. One source stays easier to keep correct.</li>
+    <li><b>Keep real children's names out of every public file and every receipt.</b>Gave up detail in the audit notes. Receipts say "three hits in two files," never the names.</li>
+  </ul>
   <p>See it in real repositories: the <a href="https://github.com/jeremy-evert/sorting_and_searching/tree/main/sidecar/prompts">prompts</a> that built Sorting and Searching, and <a href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/sidecar/PLAN_show_your_work.md">the plan for this page</a>.</p>
 </section>
 
@@ -259,6 +314,14 @@ footer{color:var(--muted);font-size:.85rem}
   boxes.forEach(function(b){b.addEventListener('change',update)});
   document.getElementById('reset').addEventListener('click',function(){boxes.forEach(function(b){b.checked=false});update()});
   update();
+  [].forEach.call(document.querySelectorAll('.prompt .copy'),function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.querySelector('pre').textContent;
+      function done(){var o=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=o},1400)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){})}
+      else{var r=document.createRange();r.selectNodeContents(b.parentNode.querySelector('pre'));var x=getSelection();x.removeAllRanges();x.addRange(r)}
+    });
+  });
 })();
 </script>
 </body>
