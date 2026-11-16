@@ -1,4 +1,4 @@
-# Escape the LLM Dungeon: Build Something Playable Without Getting Fired
+# Escape the LLM Dungeon: Building Playable Learning Projects with AI Assistants, Responsibly
 
 **Working draft v0.1 · November 16, 2026 · Not a completed or reviewed course**
 
