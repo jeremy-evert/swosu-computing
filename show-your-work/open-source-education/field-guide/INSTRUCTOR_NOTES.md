@@ -50,7 +50,7 @@ The following is **an original minimal demonstration** and not a copy of product
 ```html
 <form id="practice">
   <label for="answer">Your answer</label>
-  <input id="answer" name="answer" autocomplete="off" required>
+  <input id="answer" name="answer" autocomplete="off" aria-describedby="feedback">
   <button type="submit">Check it</button>
 </form>
 <p id="feedback" role="status" aria-live="polite"></p>
@@ -59,13 +59,18 @@ const form = document.getElementById("practice");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const answer = form.elements.namedItem("answer").value.trim();
-  document.getElementById("feedback").textContent =
-    answer ? "Answer received. Review the explanation next." : "Please enter an answer.";
+  const feedback = document.getElementById("feedback");
+  if (!answer) {
+    feedback.textContent = "Please enter an answer.";
+    form.elements.namedItem("answer").focus();
+    return;
+  }
+  feedback.textContent = "Answer received. Review the explanation next.";
 });
 </script>
 ```
 
-**What to notice:** One `type="submit"` is sufficient. The browser's form submit event supports both mouse clicks and Enter; we don't need a separate scoring path for each. This example **does not grade spelling** and stores no answers. Do not add an answer in pre-reveal DOM or a secret data attribute.
+**What to notice:** Validation lives in one place, the script, so the empty-answer message is reachable, readable by a screen reader, and testable. The HTML `required` attribute is a fine alternative, but then the browser shows its own message and the script's check is dead code; pick one and say which. One `type="submit"` is sufficient. The browser's form submit event supports both mouse clicks and Enter; we don't need a separate scoring path for each. This example **does not grade spelling** and stores no answers. Do not add an answer in pre-reveal DOM or a secret data attribute.
 
 **Failure experiment:** replace the button type with `type="button"`. The button no longer submits the form; Enter may continue to work. Try both methods. Restore the correct type and write a test that clicks the control.
 
