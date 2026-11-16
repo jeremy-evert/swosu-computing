@@ -38,6 +38,7 @@ Start with Stage I if you're unfamiliar with assistants and permissions. Experie
 ## Revision control
 
 **v0.1**: initial 18-checkpoint roadmap and sample educator notes, November 16, 2026.  
+**Authorship note**: v0.1 was drafted by ChatGPT under Jeremy Evert's direction and committed under his GitHub account, so the commit history shows him as author. From v0.2 on, each commit names the tool that assisted.  
 **Next revisions**: independent instructor review, accessibility/accuracy review, concrete screenshots, finalized timing, licensing for new instructional prose, model/connector documentation update, and hands-on student trial.
 
 ## Contact and maintenance

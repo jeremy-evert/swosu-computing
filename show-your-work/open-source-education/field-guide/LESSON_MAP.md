@@ -136,7 +136,7 @@ A participant who completes the eventual course should be able to:
 - **Skill:** layered testing: static HTML, unit checks, real browser, mouse, keyboard, touch/mobile, audio, network failures, content accuracy and usability with a human.
 - **Try:** write a test that **clicks** Check it, not only one that presses Enter. Deliberately break the button or audio link; verify that the test catches the regression.
 - **Artifact:** `TEST_REPORT.md` listing real test commands, what passed, what was not tested, screenshots, bug reproduction and fix.
-- **Check:** **WordWild's real lesson:** a reported 69/69 passing suite had missed a broken click because the tests mostly used Enter. Automation proves only the behaviors actually exercised. WordWild itself has not established a learner-outcome effect.
+- **Check:** **WordWild's real lesson:** an early version's passing automated tests had missed a broken mouse click because the tests mostly used Enter. (Our public evidence for this is a project account, not a saved test receipt; treat it as a teaching example.) Automation proves only the behaviors actually exercised. WordWild itself has not established a learner-outcome effect.
 
 ### 18. Deploy, explain and maintain
 - **Skill:** publication review, licenses and asset attribution, accessibility, privacy, secrets, versioned release, third-party links, smoke test, rollback and a person responsible for corrections.
