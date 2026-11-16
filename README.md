@@ -12,6 +12,7 @@ This repository is intentionally public. It contains only material explicitly in
 - `/cs2/` — Computer Science 2
 - `/dsct/` — Discrete Structures & Critical Thinking
 - `/architecture/` — Computer Architecture
+- `/show-your-work/` — how to show off your work: do/avoid lists, a tickable publish checklist, real projects, license guide
 - `/slides/` — deliberately published slide PDFs
 - `/examples/` — deliberately published examples and references
 
