@@ -94,6 +94,9 @@ footer{color:var(--muted);font-size:.85rem}
 
 <nav aria-label="On this page">
   <ul class="menu">
+    <li><a href="#worked-example">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40V14l16-8 16 8v26M18 40V26h12v14"/></svg>
+      <span><h3>The worked example</h3><small>Play it, read it, test it</small></span></a></li>
     <li><a href="#do-avoid">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M15 25l7 7 12-15"/></svg>
       <span><h3>Do and avoid</h3><small>The lesson in two lists</small></span></a></li>
@@ -114,6 +117,49 @@ footer{color:var(--muted);font-size:.85rem}
       <span><h3>Choosing a license</h3><small>Short guide</small></span></a></li>
   </ul>
 </nav>
+
+<section id="worked-example" aria-label="The worked example">
+  <h2>The worked example: WordWild</h2>
+  <p>Words alone do not teach this. So here is a real project, with its work shown: the games, the folder structure, the tests, the prompts, and the story. Everything on this page's checklist was applied to it before it went public.</p>
+  <div class="proj">
+    <article class="card">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="14" width="36" height="22" rx="6"/><path d="M15 25h8M19 21v8M31 23h.1M36 27h.1"/></svg>
+      <h3>Play the games</h3>
+      <p>WordWild is a small set of spelling games for a third grader, built with AI and checked by people. Pick a game and play.</p>
+      <div class="chips"><a class="chip" href="https://jeremy-evert.github.io/oeqa_spell_roller_public/wordwild/">Arcade (start here)</a><a class="chip" href="https://jeremy-evert.github.io/oeqa_spell_roller_public/wordwild/flashcards/">Flashcards</a><a class="chip" href="https://jeremy-evert.github.io/oeqa_spell_roller_public/wordwild/printer-v2/">3D Printer</a><a class="chip" href="https://jeremy-evert.github.io/oeqa_spell_roller_public/">Roll and Read</a></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8h14l4 6h14v26H8zM8 20h32"/></svg>
+      <h3>The sidecar structure</h3>
+      <p>The product sits outside <code>sidecar/</code>. How it was made sits inside: every prompt paired with its report, questions, and receipts.</p>
+      <div class="chips"><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/sidecar/README.md">Read the guide</a><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/tree/main/sidecar">Browse sidecar/</a></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 8h8M22 8v12L11 38a3 3 0 0 0 3 5h20a3 3 0 0 0 3-5L26 20V8"/><path d="M17 31h14"/></svg>
+      <h3>The unit tests</h3>
+      <p>99 of 99 tests pass. Run them yourself with <code>cd wordwild &amp;&amp; node --test</code>. The page below the tests says what is <em>not</em> tested, too.</p>
+      <div class="chips"><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/tree/main/wordwild/tests">Tests</a><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/tree/main/wordwild/flashcards/tests">Flashcards tests</a><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/wordwild/KNOWN_LIMITS.md">Known limits</a></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="5"/><path d="M15 18l6 5-6 5M25 29h9"/></svg>
+      <h3>The prompts</h3>
+      <p>Three real prompts, each with its report: one that was redirected, one that went well, one that reports honestly what was tested.</p>
+      <div class="chips"><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/sidecar/prompts/041_spelling_memory_writers_room.md">041 redirected</a><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/sidecar/prompts/042_final_list14_story_package_for_builder.md">042 went well</a><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/sidecar/prompts/045_finish_kokoro_and_arcade.md">045 honest testing</a></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="14" r="4"/><circle cx="24" cy="24" r="4"/><circle cx="38" cy="34" r="4"/><path d="M13 17l8 4M27 27l8 4"/></svg>
+      <h3>The story</h3>
+      <p>How it went from an idea to a public page in two days, including what went wrong, who or what wrote each part, and where the assets came from.</p>
+      <div class="chips"><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/wordwild/STORY.md">Read the story</a><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/wordwild/HOW_IT_WAS_MADE.md">How it was made</a><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/wordwild/ASSETS.md">Assets and licenses</a></div>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 38V10M10 10h24l-5 8 5 8H10"/></svg>
+      <h3>Your turn</h3>
+      <p>Ten steps from "pick one small thing" to "know how to take it down," with what AI can help with and what a person must check.</p>
+      <div class="chips"><a class="chip" href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/wordwild/HOW_TO_DO_THIS.md">Do the same</a><a class="chip" href="#checklist">Use the checklist</a></div>
+    </article>
+  </div>
+</section>
 
 <section id="do-avoid" class="two" aria-label="Do and avoid">
   <div class="card do">
@@ -156,7 +202,7 @@ footer{color:var(--muted);font-size:.85rem}
   <label class="tick"><input type="checkbox"><span><b>Do I know exactly what I am making public?</b> Write the list of files. Publish a deliberate copy, not your whole working folder.</span></label>
   <label class="tick"><input type="checkbox"><span><b>Is it all mine, or do I have the right to share it?</b> Text, images, sounds, fonts, code, and worksheets from other people need permission or a license that allows sharing.</span></label>
   <label class="tick"><input type="checkbox"><span><b>Is anyone else's work or information in it?</b> Classmates' work, names, emails, photos, grades. Get permission or remove it.</span></label>
-  <label class="tick"><input type="checkbox"><span><b>Does my instructor, employer, or school have a rule about this work?</b> Ask before you publish graded or course material.</span></label>
+  <label class="tick"><input type="checkbox"><span><b>Does an employer, school, or collaborator have a rule about this work?</b> Ask before you publish anything you made for them or with them.</span></label>
 
   <h3>2. Clean it</h3>
   <label class="tick"><input type="checkbox"><span><b>No secrets.</b> Search for passwords, keys, tokens, and login files. If one ever reached a public place, change it first, then clean up.</span></label>
@@ -192,7 +238,7 @@ footer{color:var(--muted);font-size:.85rem}
   <h3>7. After</h3>
   <label class="tick"><input type="checkbox"><span><b>Say whether the project is finished, paused, or open to suggestions,</b> and how to reach you.</span></label>
   <label class="tick"><input type="checkbox"><span><b>Know how to take it down</b> (make the repository private, or turn off the page) if you find a problem.</span></label>
-  <label class="tick"><input type="checkbox"><span><b>If you find a secret or private detail, change the secret, remove the detail, and tell your instructor.</b> Do not try to hide that it happened.</span></label>
+  <label class="tick"><input type="checkbox"><span><b>If you find a secret or private detail, change the secret, remove the detail, and tell anyone affected.</b> Do not try to hide that it happened.</span></label>
 
   <p class="note">The same list as a plain file: <a href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/CHECKLIST.md">CHECKLIST.md</a>.</p>
 </section>
@@ -251,11 +297,11 @@ I would change my mind if ___.</pre><button type="button" class="copy">Copy</but
     <article class="card">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M24 24l-6-12M24 24l12 6"/></svg>
       <h3>Deciding with AI</h3>
-      <p>A student field guide: rules of thumb, a routine, and prompts that catch AI mistakes.</p>
+      <p>A field guide: rules of thumb, a routine, and prompts that catch AI mistakes.</p>
       <div class="chips"><a class="chip" href="../deciding-with-ai/">Read it</a></div>
     </article>
   </div>
-  <p class="note">More projects will be added here as students publish theirs.</p>
+  <p class="note">More projects will be added here as others publish theirs.</p>
 </section>
 
 <section id="process" class="card" aria-label="Process">
@@ -282,7 +328,7 @@ I would change my mind if ___.</pre><button type="button" class="copy">Copy</but
 
 <section id="license" class="card" aria-label="Choosing a license">
   <h2>Choosing a license</h2>
-  <p>Pick one on purpose and say which. If you are unsure, ask your instructor. This is guidance for coursework, not legal advice.</p>
+  <p>Pick one on purpose and say which. If you are unsure, ask someone who knows. This is general guidance, not legal advice.</p>
   <div class="tbl"><table>
     <thead><tr><th>What you made</th><th>A common choice</th><th>In one line</th></tr></thead>
     <tbody>
@@ -294,7 +340,7 @@ I would change my mind if ___.</pre><button type="button" class="copy">Copy</but
 </section>
 
 <footer>
-  <p>Canvas remains authoritative for graded work, due dates, and grades. <a href="../">SWOSU Computing home</a> · <a href="../bootstrap/">Start Here</a></p>
+  <p>This was generated by combined effort from Claude, Claude Code, Codex, ChatGPT, and Jeremy Evert.</p>
 </footer>
 
 </main>
