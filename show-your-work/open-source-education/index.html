@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="A public roadmap for contributing educational resources to OER Commons, OpenStax, The Carpentries, Oklahoma OER programs, and educational game platforms.">
+<title>Open Source Education Planning | SWOSU Computing</title>
+<style>
+:root{
+  --bg:#fbfaf7;--paper:#fff;--ink:#1c2230;--muted:#5b6170;
+  --line:#d9d6cc;--accent:#1f6b5c;--soft:#e3f0ec;--warm:#fff0d4;
+  --warn:#84511b;--chip:#f2f1ec;--body:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#14171d;--paper:#1b1f27;--ink:#e8e6df;--muted:#b4b7c0;
+  --line:#343a46;--accent:#8edcc5;--soft:#1f3631;--warm:#362a19;
+  --warn:#f4c27d;--chip:#232832;color-scheme:dark;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 var(--body);margin:0;background:var(--bg);color:var(--ink);padding:22px max(16px,env(safe-area-inset-right)) 65px max(16px,env(safe-area-inset-left))}
+main{max-width:900px;margin:auto}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+p{margin:10px 0}
+h1,h2,h3{line-height:1.2;letter-spacing:-.025em}
+h1{font-size:clamp(2rem,5vw,3.35rem);margin:9px 0 16px;max-width:22ch}
+h2{font-size:clamp(1.4rem,3vw,1.8rem);margin:0 0 12px}
+h3{font-size:1.08rem;margin:0 0 9px}
+small,.small{font-size:.88rem}
+.kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.13em;font-weight:800;font-size:.75rem}
+.muted{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:23px;margin:21px 0}
+.hero{padding:28px 31px;border-top:5px solid var(--accent)}
+.thesis{background:var(--soft);border-left:4px solid var(--accent);font-weight:700;padding:13px 16px;margin-top:20px}
+.status{background:var(--warm);border:1px solid var(--line);border-radius:9px;padding:13px 16px;margin:17px 0;font-size:.94rem}
+.crumb{font-size:.9rem}
+.jump{display:flex;gap:9px;flex-wrap:wrap;margin:23px 0}
+.jump a{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-decoration:none;color:var(--ink);font-size:.85rem}
+.jump a:hover{border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:13px}
+.grid .card{margin:0}
+.tag{display:inline-block;font-size:.72rem;line-height:1.3;font-weight:750;text-transform:uppercase;letter-spacing:.035em;background:var(--chip);color:var(--muted);border-radius:6px;padding:5px 8px;margin:0 0 10px}
+.tag.now{background:var(--soft);color:var(--accent)}
+.tag.later{background:var(--warm);color:var(--warn)}
+.step{display:grid;grid-template-columns:38px 1fr;gap:14px;border-bottom:1px solid var(--line);padding:14px 0}
+.step:last-child{border-bottom:0}
+.num{width:34px;height:34px;border-radius:50%;background:var(--soft);color:var(--accent);font-weight:800;text-align:center;line-height:34px}
+.step p{margin:4px 0}
+ol,ul{padding-left:1.3em}li{margin:6px 0}
+.eco{border-left:4px solid var(--accent)}
+.eco:nth-child(2n){border-left-color:#c58b3e}
+.eco .how{color:var(--muted);font-size:.94rem}
+.callout{background:var(--soft);border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 10px 10px 0}
+table{border-collapse:collapse;width:100%;font-size:.94rem}
+td,th{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--chip)}
+.table-wrap{overflow-x:auto}
+footer{padding:23px 3px;color:var(--muted);font-size:.85rem}
+footer a{margin-right:10px}
+@media(max-width:560px){body{padding-top:13px}.hero,.card{padding:18px}.step{grid-template-columns:31px 1fr;gap:10px}.num{width:29px;height:29px;line-height:29px}}
+@media print{body{background:white;color:black}.card{break-inside:avoid}.jump{display:none}a{color:inherit}}
+</style>
+</head>
+<body>
+<main>
+<p class="crumb"><a href="../../">SWOSU Computing</a> / <a href="../">Show Your Work</a> / Open Source Education Planning</p>
+
+<header class="card hero">
+  <div class="kicker">Open education · public roadmap · 16 November 2026</div>
+  <h1>Where our teaching materials go next</h1>
+  <p class="small muted"><strong>Open Source Education Planning</strong>: a plan for contributing lessons and learning games to established educational communities.</p>
+  <p>We've learned to build and publish educational software on our own website. The next challenge is different: <strong>how do we contribute useful resources where other teachers can discover, adapt, review, and improve them?</strong></p>
+  <p class="thesis">Make something worth teaching. Verify it. Share it where educators already work. Keep improving it with the community.</p>
+  <div class="status"><strong>This page is the plan, not a claim of completion.</strong> Our first outside-platform submissions are <strong>not started</strong>. I plan to work through these routes <strong>after the semester</strong>. Students can explore the roadmap now and see how the project develops over time.</div>
+</header>
+
+<nav class="jump" aria-label="On this page">
+  <a href="#why">The goal</a><a href="#roadmap">The roadmap</a><a href="#ecosystems">Where to contribute</a><a href="#package">What we will publish</a><a href="#evidence">How we know</a><a href="#join">For students</a>
+</nav>
+
+<section id="why" class="card">
+  <div class="kicker">Why this matters</div>
+  <h2>Publishing something yourself is only the beginning.</h2>
+  <p>There are different ways to share educational work, and they are <strong>not equivalent</strong>:</p>
+  <div class="grid">
+    <div class="card"><span class="tag now">We can do this now</span><h3>Host it ourselves</h3><p class="small">Our own GitHub Pages site hosts the game or lesson. It's public, but teachers still need to find it.</p></div>
+    <div class="card"><span class="tag later">To explore</span><h3>Publish or catalog it elsewhere</h3><p class="small">A platform such as OER Commons can host the educator-facing lesson or list a resource that lives on our site. These are two different submission routes.</p></div>
+    <div class="card"><span class="tag later">To explore</span><h3>Distribute or contribute upstream</h3><p class="small">Kolibri can distribute a packaged game. A community such as The Carpentries may review and integrate a lesson contribution into its maintained project.</p></div>
+  </div>
+  <p>That last distinction matters. <strong>A link in a catalog is not the same as a publisher hosting the game, and a submission is not the same as an accepted contribution.</strong></p>
+</section>
+
+<section id="roadmap" class="card">
+  <div class="kicker">The sequence</div>
+  <h2>Our plan for after the semester</h2>
+  <div class="step"><div class="num">1</div><div><h3>Start with a real learning problem</h3><p>Choose one small, complete lesson or learning game. The first candidate is an educator guide accompanying <a href="https://jeremy-evert.github.io/oeqa_spell_roller_public/wordwild/">WordWild, our public spelling-game example</a>. Future projects may focus on third-grade mathematics or introductory computing.</p></div></div>
+  <div class="step"><div class="num">2</div><div><h3>Prepare a teacher-ready package</h3><p>Set out objectives, a manageable lesson, worked examples, formative questions, answer explanations, accessibility guidance, rights and attribution, and known limitations. Ask another educator to review instructional claims.</p></div></div>
+  <div class="step"><div class="num">3</div><div><h3>Publish our first resource through OER Commons</h3><p>Try <a href="https://help.oercommons.org/support/solutions/articles/42000067049-create-a-resource-with-open-author">Open Author</a> to place a lesson on another organization's platform. Separately, consider <a href="https://help.oercommons.org/support/solutions/articles/42000046849-submit-oer">Submit from Web</a> to request a catalog listing for an existing public game. Record the real URL and review status.</p></div></div>
+  <div class="step"><div class="num">4</div><div><h3>Package a playable game for Kolibri</h3><p>Make a self-contained HTML5 ZIP, with its own index page and relative assets. Upload through <a href="https://studio.learningequality.org/">Kolibri Studio</a>, test narration and controls, publish a channel if permitted, then confirm a separate Kolibri installation can import and play it.</p></div></div>
+  <div class="step"><div class="num">5</div><div><h3>Find a wider community to contribute to</h3><p>Explore Oklahoma's OER ecosystem, college textbook support hubs, and open lesson communities. Learn the host's licensing, submission and AI-assistance policies; contribute something maintainers actually need.</p></div></div>
+  <div class="step"><div class="num">6</div><div><h3>Document what happened</h3><p>Keep the submission receipts, URLs, review feedback, corrections, version history and unanswered questions. Update this roadmap with actual outcomes, including rejections or surprises.</p></div></div>
+</section>
+
+<section id="ecosystems">
+  <div class="kicker">The destinations</div>
+  <h2>External ecosystems: where we could contribute</h2>
+  <p class="muted">These are prospective routes, not organizations that have agreed to accept our work. Each has a different audience and publication model.</p>
+  <div class="grid">
+    <article class="card eco">
+      <span class="tag later">Higher ed · early priority</span>
+      <h3>OpenStax + OER Commons hubs</h3>
+      <p>Prepare an original, chapter-aligned activity that another college instructor can use. Find a specific textbook, open <strong>Instructor Resources</strong>, follow its <strong>Visit the Hub</strong> link when available, join the OER Commons group, and submit supplemental material.</p>
+      <p class="how">First candidate: introductory computing topics such as binary representation or a misconception-driven worked example. Community posting is not OpenStax endorsement; check each book's license and AI-use conditions.</p>
+      <a href="https://help.openstax.org/s/article/Contributing-support-materials-for-OpenStax-texts">OpenStax contribution instructions</a>
+    </article>
+    <article class="card eco">
+      <span class="tag later">Computing lessons · human-led</span>
+      <h3>The Carpentries Incubator</h3>
+      <p>Find an existing lesson and its contribution guide, read recent issues, and choose one useful improvement. Have a human contributor review the educational need, write their own issue or PR description, and collaborate with maintainers.</p>
+      <p class="how">Their May 2026 AI policy requires disclosure and bars agent-automated contributions. An Incubator lesson is not automatically an officially endorsed Carpentries lesson.</p>
+      <a href="https://carpentries-incubator.github.io/">Visit the Incubator</a> · <a href="https://docs.carpentries.org/policies/genai-policy.html">Read the AI policy</a>
+    </article>
+    <article class="card eco">
+      <span class="tag later">Oklahoma · eligibility to check</span>
+      <h3>OpenLearnOK, OCO, OPEN OCO Pressbooks</h3>
+      <p>Explore where Oklahoma educators create, adapt and exchange open materials. Ask whether a SWOSU educator can independently request a Pressbooks account and how an openly licensed lesson or interactive might be shared statewide.</p>
+      <p class="how">We have not confirmed account access, institutional eligibility, or a specific submission route. Statewide relevance does not by itself mean endorsement.</p>
+      <a href="https://open.ocolearnok.org/">OPEN OCO Pressbooks</a> · <a href="https://www.ocolearnok.org/priorities/open-educational-resources/">OCO OER priorities</a> · <a href="https://openlearnok.org/">OpenLearnOK</a>
+    </article>
+    <article class="card eco">
+      <span class="tag later">K–12 math and science</span>
+      <h3>CK-12</h3>
+      <p>Investigate publishing an educator-created FlexBook or adapting appropriate math/science material. Confirm the current account, publishing, moderation, and licensing arrangements before preparing a major submission.</p>
+      <p class="how">A self-published FlexBook is not the same as acceptance into a curated CK-12 textbook.</p>
+      <a href="https://help.ck12.org/hc/en-us/articles/200344625-How-to-Publish-My-FlexBook-Textbook">FlexBook publishing guide</a>
+    </article>
+    <article class="card eco">
+      <span class="tag later">K–12 curriculum reference</span>
+      <h3>OpenSciEd</h3>
+      <p>Study its standards-based science units and adaptation terms. A compatible external supplement might be valuable, but an open route to modify official curriculum has not been established.</p>
+      <p class="how">Permission to adapt a lesson does not automatically grant upstream publication in the official collection.</p>
+      <a href="https://openscied.org/curriculum/">Explore the curriculum</a>
+    </article>
+    <article class="card eco">
+      <span class="tag later">Standards and policy</span>
+      <h3>Oklahoma standards + TeachAI</h3>
+      <p>Use the <a href="https://oklahoma.gov/education/services/standards-learning/oklahoma-academic-standards.html">Oklahoma Academic Standards</a> to align activities and <a href="https://www.teachai.org/toolkit">TeachAI</a> for responsible-use questions.</p>
+      <p class="how">These are references and guidance, not verified open lesson-submission services.</p>
+    </article>
+    <article class="card eco">
+      <span class="tag later">Interactive game distribution</span>
+      <h3>Kolibri Studio</h3>
+      <p>Package a complete offline-capable HTML5 game, upload it to a content channel, preview, publish and verify import in Kolibri. It can move the game's files into another educational distribution system.</p>
+      <p class="how">A shared channel is not necessarily a public browser URL. We must test ZIP paths, audio, embedded browser behavior and rights.</p>
+      <a href="https://kolibri-studio.readthedocs.io/en/latest/add_content.html">HTML5 resource instructions</a>
+    </article>
+    <article class="card eco">
+      <span class="tag later">Later possibilities</span>
+      <h3>Sugarizer + H5P</h3>
+      <p>Sugarizer offers an open educational-activity ecosystem; H5P offers shareable interactive formats and an OER Hub. Both are worth investigating after a simpler publication succeeds.</p>
+      <p class="how">Existing WordWild JavaScript will not automatically become an accepted Sugarizer activity or an H5P exercise.</p>
+      <a href="https://github.com/llaske/sugarizer">Sugarizer project</a> · <a href="https://h5p.org/h5p-oer-hub-jan-2026">H5P OER Hub</a>
+    </article>
+  </div>
+</section>
+
+<section id="package" class="card">
+  <div class="kicker">The deliverable</div>
+  <h2>What a complete contribution should contain</h2>
+  <p>Our first submission will be deliberately small and complete, not an enormous unreviewed curriculum dump.</p>
+  <ul>
+    <li><strong>Who it serves:</strong> grade level, prerequisites, learning objectives and estimated time.</li>
+    <li><strong>What to teach:</strong> a 20–45 minute lesson, two original worked examples and misconceptions addressed.</li>
+    <li><strong>What the learner does:</strong> an interactive or offline activity, meaningful help and room to retry.</li>
+    <li><strong>How an instructor checks understanding:</strong> formative items, explanations and an answer key.</li>
+    <li><strong>How others can reuse it:</strong> accessible formats, source and asset credits, explicit rights/license, version and date.</li>
+    <li><strong>What we actually know:</strong> test evidence, unresolved instructional claims, platform limits and a way to report corrections.</li>
+  </ul>
+  <div class="callout"><strong>Example:</strong> WordWild has playable Flashcards and Printer games on our existing public site. The next proposed contribution is a reviewed teacher-facing spelling activity that links to the game. It is a <em>candidate resource</em>, not a proven literacy intervention.</div>
+  <p><a href="https://jeremy-evert.github.io/oeqa_spell_roller_public/wordwild/">Play the existing WordWild Arcade</a> · <a href="https://github.com/jeremy-evert/oeqa_spell_roller_public/blob/main/wordwild/KNOWN_LIMITS.md">Read the known limits</a> · <a href="../#checklist">Use the publishing checklist</a></p>
+</section>
+
+<section id="evidence" class="card">
+  <div class="kicker">Truth in publishing</div>
+  <h2>How we will know we've made progress</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Milestone</th><th>What counts as evidence</th><th>Status on Nov. 16, 2026</th></tr></thead>
+    <tbody>
+      <tr><td>Public demonstration on our own website</td><td>Playable page, source, usage notes and honest limits</td><td><strong>Available now</strong></td></tr>
+      <tr><td>Teacher-ready OER package</td><td>Reviewed lesson, examples, checks, accessibility and rights</td><td>Planned</td></tr>
+      <tr><td>Externally hosted OER Commons lesson</td><td>A real outside-hosted lesson URL that visitors can open</td><td>Not submitted</td></tr>
+      <tr><td>OER Commons catalog listing</td><td>An approved listing, not merely a pending submission</td><td>Not submitted</td></tr>
+      <tr><td>Kolibri distribution</td><td>Published channel plus successful import and playback elsewhere</td><td>Not started</td></tr>
+      <tr><td>Oklahoma / OpenStax / Carpentries contribution</td><td>Actual response, submission, review or accepted upstream change</td><td>Future exploration</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">A completed test is not proof that children learned more; a learner's thumbs-up is not a learning outcome; and an AI-generated answer is not an educator's verification. We will name what was tested and what still needs a person.</p>
+</section>
+
+<section id="join" class="card">
+  <div class="kicker">For students</div>
+  <h2>You can study this process before we publish anything.</h2>
+  <p>Choose one destination above. Ask: <strong>Who would benefit from the resource? Who hosts it? What rights does the author need? Who reviews it? What evidence would prove a contribution was accepted?</strong> Then compare its process to our <a href="../">Show Your Work</a> checklist.</p>
+  <p>Try an existing <a href="https://jeremy-evert.github.io/oeqa_spell_roller_public/wordwild/">WordWild game</a> and look for one concrete improvement, whether that's a clearer clue, a mouse button, a sound control, a spelling explanation, or accessibility. A precise, reproduced problem is more valuable than a vague request for AI to “make it better.”</p>
+  <p>After the semester, I intend to work through this roadmap and share what really happened, including which outside organizations accepted work, what they asked us to change, and what did not work.</p>
+  <div class="callout"><strong>The destination isn't another repository with our name on it.</strong> It's useful teaching material that someone else can find, adapt, improve and use with learners we may never meet.</div>
+</section>
+
+<footer>
+  <p><strong>SWOSU Computing</strong> · Educational planning roadmap · Updated November 16, 2026</p>
+  <p><a href="../">Show Your Work</a> <a href="../../">SWOSU Computing Home</a> <a href="https://jeremy-evert.github.io/oeqa_spell_roller_public/wordwild/">WordWild example</a></p>
+  <p>Publication and external platform details may change. Current rules and account requirements must be checked again when the actual submissions begin.</p>
+</footer>
+</main>
+</body>
+</html>
