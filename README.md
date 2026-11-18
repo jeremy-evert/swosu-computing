@@ -21,3 +21,7 @@ Canvas remains authoritative for graded work, due dates, submissions, grades, of
 ## Publication rule
 
 Nothing from private repositories is mirrored automatically. Publication into this repo is explicit and allow-listed.
+
+## License
+
+Code in this repository (HTML, CSS, JavaScript, and tools) is BSD 2-Clause — see `LICENSE`. Writing, images, slides, handouts, and other content are CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) unless otherwise noted: you may share and adapt them with credit, and adaptations must be shared under the same license. Borrowed material keeps its own license.
