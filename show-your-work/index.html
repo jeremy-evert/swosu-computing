@@ -40,8 +40,10 @@ p{margin:6px 0}
 .menu a{display:flex;gap:12px;align-items:flex-start;height:100%;text-decoration:none;color:inherit;
   background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px}
 .menu a:hover,.menu a:focus-visible{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .menu svg{flex:none;width:44px;height:44px;color:var(--accent)}
 .menu small{color:var(--muted);display:block}
+.menu .menu-title{display:block;font-family:var(--f-display);font-size:1.02rem;font-weight:700;line-height:1.15;margin:0 0 4px;text-wrap:balance}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
 .do{border-top:5px solid var(--accent)} .avoid{border-top:5px solid var(--warn)}
 .do h2{color:var(--accent)} .avoid h2{color:var(--warn)}
@@ -97,28 +99,28 @@ footer{color:var(--muted);font-size:.85rem}
   <ul class="menu">
     <li><a href="#worked-example">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40V14l16-8 16 8v26M18 40V26h12v14"/></svg>
-      <span><h3>The worked example</h3><small>Play it, read it, test it</small></span></a></li>
+      <span><span class="menu-title">The worked example</span><small>Play it, read it, test it</small></span></a></li>
     <li><a href="#do-avoid">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="18"/><path d="M15 25l7 7 12-15"/></svg>
-      <span><h3>Do and avoid</h3><small>The lesson in two lists</small></span></a></li>
+      <span><span class="menu-title">Do and avoid</span><small>The lesson in two lists</small></span></a></li>
     <li><a href="#checklist">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="6" width="30" height="36" rx="4"/><path d="M16 17l3 3 5-6M16 30l3 3 5-6M29 18h5M29 31h5"/></svg>
-      <span><h3>The checklist</h3><small>Tick it off before you publish</small></span></a></li>
+      <span><span class="menu-title">The checklist</span><small>Tick it off before you publish</small></span></a></li>
     <li><a href="#review-with-ai">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="21" cy="21" r="12"/><path d="M30 30l11 11M16 21l4 4 7-8"/></svg>
-      <span><h3>Review with AI</h3><small>Prompts that check your work</small></span></a></li>
+      <span><span class="menu-title">Review with AI</span><small>Prompts that check your work</small></span></a></li>
     <li><a href="#projects">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="15" height="15" rx="3"/><rect x="27" y="6" width="15" height="15" rx="3"/><rect x="6" y="27" width="15" height="15" rx="3"/><rect x="27" y="27" width="15" height="15" rx="3"/></svg>
-      <span><h3>Real projects</h3><small>Examples that followed it</small></span></a></li>
+      <span><span class="menu-title">Real projects</span><small>Examples that followed it</small></span></a></li>
     <li><a href="#process">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="24" r="5"/><circle cx="24" cy="24" r="5"/><circle cx="38" cy="24" r="5"/><path d="M15 24h4M29 24h4"/></svg>
-      <span><h3>The process</h3><small>How these were made, step by step</small></span></a></li>
+      <span><span class="menu-title">The process</span><small>How these were made, step by step</small></span></a></li>
     <li><a href="open-source-education/">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="24" r="5"/><circle cx="37" cy="11" r="5"/><circle cx="37" cy="37" r="5"/><path d="M16 21l16-8M16 27l16 8M9 11v7M9 30v7"/></svg>
-      <span><h3>Open Education Roadmap</h3><small>Where our teaching materials go next</small></span></a></li>
+      <span><span class="menu-title">Open Education Roadmap</span><small>Where our teaching materials go next</small></span></a></li>
     <li><a href="#license">
       <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5l16 6v12c0 10-7 17-16 20C15 40 8 33 8 23V11z"/><path d="M17 24l5 5 9-10"/></svg>
-      <span><h3>Choosing a license</h3><small>Short guide</small></span></a></li>
+      <span><span class="menu-title">Choosing a license</span><small>Short guide</small></span></a></li>
   </ul>
 </nav>
 
@@ -197,10 +199,11 @@ footer{color:var(--muted);font-size:.85rem}
   </div>
 </section>
 
+<!-- Checklist mirror: keep in sync with CHECKLIST.md in jeremy-evert/oeqa_spell_roller_public (28 items, 7 sections, as of 2026-11-16). If you add, remove, or reorder items here, update that file too, and update the initial count text and progress max in the bar below to match the new total. -->
 <section id="checklist" class="card group" aria-label="Checklist">
   <h2>Before you make it public</h2>
   <p class="note">Each line is a yes-or-no question. If it is "no" or "not sure," stop and fix it first. Your ticks stay on this device only; nothing is sent anywhere.</p>
-  <div class="bar"><span id="count">0 of 0</span><progress id="prog" value="0" max="1"></progress><button type="button" id="reset">Clear ticks</button></div>
+  <div class="bar"><span id="count">0 of 28</span><progress id="prog" value="0" max="28" aria-label="Checklist progress"></progress><button type="button" id="reset">Clear ticks</button></div>
 
   <h3>1. Before you start</h3>
   <label class="tick"><input type="checkbox"><span><b>Do I know exactly what I am making public?</b> Write the list of files. Publish a deliberate copy, not your whole working folder.</span></label>
